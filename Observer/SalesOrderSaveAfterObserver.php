@@ -34,9 +34,15 @@ class SalesOrderSaveAfterObserver implements ObserverInterface
             $ProdustIds= $item->getProductId();
             $proName = $item->getName();
             $sku = $item->getSku();
-            $this->_logger->info("Curso_Observers ->sales product:". json_encode($ProdustIds));
-            $this->_logger->info("Curso_Observers ->sales product:". json_encode($proName));
-            $this->_logger->info("Curso_Observers ->sales product:". json_encode($sku));
+            $type = $item->getProductType();
+            if($type=='simple'){
+                $this->_logger->info("Curso_Observers ->sales product:". json_encode($type));
+                $this->_logger->info("Curso_Observers ->sales product:". json_encode($ProdustIds));
+                $this->_logger->info("Curso_Observers ->sales product:". json_encode($proName));
+                $this->_logger->info("Curso_Observers ->sales product:". json_encode($sku));
+                $this->_logger->info("*************************");
+            }
+            
         }
         
     }

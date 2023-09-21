@@ -27,7 +27,9 @@ class CartProductAfterObserver implements ObserverInterface
         $product = $observer->getEvent()->getProduct();
         $data = array(
             'product_id' => $product->getId(), 
-            'name' =>$product->getName()
+            'name' =>$product->getName(),
+            'sku' =>$product->getSku(),
+            'precio' =>$product->getPrice()
         );
         $this->_logger->info("Curso_Observers -> product:". json_encode($data));
     }
