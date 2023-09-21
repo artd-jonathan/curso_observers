@@ -24,11 +24,11 @@ class CartProductAfterObserver implements ObserverInterface
     {
         // Observer execution code...
         /** @var \Magento\Framework\DataObject $info */
-        // $product = $observer->getEvent()->getProduct();
-        // $data = array(
-        //     'product_id' => $product->getId(), 
-        //     'name' =>$product->getName()
-        // );
-        // $this->_logger->info("Curso_Observers -> product:". json_encode($data));
+        $product = $observer->getEvent()->getProduct();
+        $data = array(
+            'product_id' => $product->getId(), 
+            'name' =>$product->getName()
+        );
+        $this->_logger->info("Curso_Observers -> product:". json_encode($data));
     }
 }
