@@ -3,4 +3,10 @@
     <event name="customer_login">
         <observer name="curso_customer_login_observer" instance="Curso\Observers\Observer\MyObserver"/>
     </event>
+    <event name="checkout_cart_product_add_after">
+        <observer name="curso_checkout_cart_product_add_after_observer" instance="Curso\Observers\Observer\CartProductAfterObserver" />
+    </event>
+    <event name="sales_order_save_after">
+        <observer name="curso_sales_order_save_after_observer" instance="Curso\Observers\Observer\SalesOrderSaveAfterObserver" />
+    </event>
 </config>
